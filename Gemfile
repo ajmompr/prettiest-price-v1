@@ -107,3 +107,9 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
 end
+
+# Web scraping gems
+gem "pry"
+gem "nokogiri"
+gem 'httparty', '~> 0.21.0'
+gem "open-uri"
