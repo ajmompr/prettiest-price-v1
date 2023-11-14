@@ -113,3 +113,4 @@ gem "pry"
 gem "nokogiri"
 gem 'httparty', '~> 0.21.0'
 gem "open-uri"
+gem "kimurai"
