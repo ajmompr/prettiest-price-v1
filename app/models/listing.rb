@@ -10,7 +10,7 @@
 #  retailer_id :integer
 #
 class Listing < ApplicationRecord
-  belongs_to :product, required: true, class_name: "Product", foreign_key: "product_id", counter_cache: true
-  belongs_to :retailer, required: true, class_name: "Retailer", foreign_key: "retailer_id", counter_cache: true
+  belongs_to :product, required: true, class_name: "Product", foreign_key: "product_id"
+  belongs_to :retailer, required: true, class_name: "Retailer", foreign_key: "retailer_id"
   has_many  :snapshots, class_name: "Snapshot", foreign_key: "listing_id", dependent: :destroy
 end
