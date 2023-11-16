@@ -1,10 +1,10 @@
 namespace :scrape do
-  desc "TODO"
+  desc "Runs price scraper"
   task prices: :environment do
-    
-    # Product.all.each do |product|
-    #   PriceScraper.new(product.id).scrape
-    # end
-  end
+    p "Scraping prices...."
 
+    # TODO: loop through listings
+    AmazonPriceScraper.new('B00TTD9BRC').scrape
+    p "Done"
+  end
 end
