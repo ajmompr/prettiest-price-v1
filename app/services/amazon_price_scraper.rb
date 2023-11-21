@@ -20,7 +20,7 @@ class AmazonPriceScraper
 
       return
     end
-
+ 
     doc = Nokogiri::HTML(html)
 
     # Locate the price element using the CSS selector
@@ -45,10 +45,15 @@ class AmazonPriceScraper
   end
 
   def fetch_html(url)
-    driver = Selenium::WebDriver.for :chrome
+    driver = Selenium::WebDriver.for(:chrome)
+
+    options = Selenium::WebDriver::Chrome::Options.new
+    options.headless!
+    driver = Selenium::WebDriver.for(:chrome, capabilities: [options])
+
     driver.navigate.to url
     wait = Selenium::WebDriver::Wait.new(timeout: 10)
-    wait.until { driver.find_element(class: "apexPriceToPay") }
+    wait.until { driver.find_element(class: "a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay") }
     html = driver.page_source
     driver.quit
 
