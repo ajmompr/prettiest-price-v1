@@ -5,7 +5,6 @@
 #  id             :integer          not null, primary key
 #  description    :string
 #  image          :string
-#  listings_count :integer          default(0)
 #  name           :string
 #  product_volume :integer
 #  created_at     :datetime         not null

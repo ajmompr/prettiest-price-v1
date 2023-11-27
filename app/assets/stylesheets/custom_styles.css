@@ -1,8 +1,14 @@
+body {
+  background-color: #d2bfc0; 
+  height:100vh;
+}
+
 #background-img{
   background-image: url('/images/background-2.jpg');
   background-repeat: no-repeat; 
   background-size: cover;
 }
+
 .emphasized-low-word{
   color: #F84791;
 }
@@ -18,4 +24,7 @@
 #join-waitlist-btn {
   background-color: #F84791;
   color: white;
+}
+.error-msg {
+  min-height: 100vh;
 }
