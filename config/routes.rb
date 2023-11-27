@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :waitlist_entries, only: [:create]
 
   if Rails.env.development?
-    mount RailsDb::Engine => "/rails/db", :as => "rails_db"
+    mount RailsDb::Engine => "/rails/db", :as => "rails_db_admin"
   end
 
   # Defines the root path route ("/") 
