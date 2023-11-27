@@ -3,6 +3,7 @@
 # Table name: retailers
 #
 #  id            :integer          not null, primary key
+#  image         :string
 #  listing_count :integer          default(0)
 #  name          :string
 #  created_at    :datetime         not null
