@@ -6,6 +6,7 @@
 #  image         :string
 #  listing_count :integer          default(0)
 #  name          :string
+#  url           :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
