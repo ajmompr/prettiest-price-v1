@@ -70,12 +70,10 @@ task({ :sample_data => :environment }) do
 
 
   # Generatae sample snapshots
-  rand_listing_id = Listing.pluck(:id).sample
-
   100.times do
     snapshot = Snapshot.new
-    snapshot.faker_date = Faker::Date.between(from: '2023-10-23', to: '2023-12-25')
-    snapshot.listing_id = rand_listing_id
+    snapshot.faker_date = Faker::Date.between(from: '2023-10-23', to: '2023-11-27')
+    snapshot.listing_id = Listing.pluck(:id).sample
     snapshot.price = Faker::Commerce.price.to_i
     snapshot.save
   end
