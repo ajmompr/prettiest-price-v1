@@ -3,6 +3,7 @@
 # Table name: snapshots
 #
 #  id         :integer          not null, primary key
+#  faker_date :date
 #  price      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
