@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # TODO: restrict to only admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
