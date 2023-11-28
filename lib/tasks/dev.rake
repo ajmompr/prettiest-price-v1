@@ -74,7 +74,7 @@ task({ :sample_data => :environment }) do
     snapshot = Snapshot.new
     snapshot.faker_date = Faker::Date.between(from: '2023-10-23', to: '2023-11-27')
     snapshot.listing_id = Listing.pluck(:id).sample
-    snapshot.price = Faker::Commerce.price.to_i
+    snapshot.price = Faker::Commerce.price
     snapshot.save
   end
   # Print number of listings
