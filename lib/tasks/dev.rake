@@ -7,9 +7,23 @@ task({ :sample_data => :environment }) do
     Listing.destroy_all
     Snapshot.destroy_all
   end
-
   #Print retailer count
   p "Currently: #{Retailer.count} retailers in the database!"
+  # Generate sample users
+  # names = ["bob", "alice", "sandra", "steve", "gerry", "jenny"]
+  # 6.times do |count|
+    
+  #   user = User.new
+  #   user.admin = false
+  #   user.avatar = "test_url.url"
+  #   user.username = names.at(count)
+  #   user.email = "#{user.username}@example.com"
+  #   user.encrypted_password = "password"
+  #   user.fave_count = 0
+  #   user.save
+  # end
+  # debugger
+  # p "Added #{User.count} users to the database!"
 
   # Generate sample products
   10.times do |count|
@@ -24,29 +38,26 @@ task({ :sample_data => :environment }) do
   p "Added #{Product.count} products to the database!"
 
   # Generate sample listing & retailer ids
-  
+
   30.times do
     listing = Listing.new
     listing.url = "test_url.url"
     listing.product_id = Product.pluck(:id).sample
     listing.retailer_id = Retailer.pluck(:id).sample
     listing.save
-  end 
+  end
   p "You created #{Listing.count} listings!"
-
-
 
   # Generatae sample snapshots
   100.times do
     snapshot = Snapshot.new
-    snapshot.faker_date = Faker::Date.between(from: '2023-10-23', to: '2023-11-27')
+    snapshot.faker_date = Faker::Date.between(from: "2023-10-23", to: "2023-11-27")
     snapshot.listing_id = Listing.pluck(:id).sample
     snapshot.price = Faker::Commerce.price
     snapshot.save
   end
   # Print number of listings
   p "You have added #{Snapshot.count} snapshots to the database!"
-
 
   # # Create Amazon Retailer
   # retailer = Retailer.new
