@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/") 
-  root "static#index"
+  root to: "static#index"
 
   match "*umatched_route", to: "errors#not_found", via: :all
 end
