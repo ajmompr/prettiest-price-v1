@@ -10,20 +10,15 @@ task({ :sample_data => :environment }) do
   #Print retailer count
   p "Currently: #{Retailer.count} retailers in the database!"
   # Generate sample users
-  # names = ["bob", "alice", "sandra", "steve", "gerry", "jenny"]
-  # 6.times do |count|
-    
-  #   user = User.new
-  #   user.admin = false
-  #   user.avatar = "test_url.url"
-  #   user.username = names.at(count)
-  #   user.email = "#{user.username}@example.com"
-  #   user.encrypted_password = "password"
-  #   user.fave_count = 0
-  #   user.save
-  # end
-  # debugger
-  # p "Added #{User.count} users to the database!"
+  names = ["bob", "alice", "sandra", "steve", "gerry", "jenny"]
+  6.times do |count|
+    user = User.new
+    user.username = names.at(count)
+    user.email = "#{user.username}@example.com"
+    user.password = "password"
+    user.save
+  end
+  p "Added #{User.count} users to the database!"
 
   # Generate sample products
   10.times do |count|
