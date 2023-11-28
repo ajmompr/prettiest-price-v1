@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  faker_date :date
-#  price      :integer
+#  price      :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  listing_id :integer
