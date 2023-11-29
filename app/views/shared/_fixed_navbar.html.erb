@@ -5,6 +5,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
+      <%= link_to "Admin", rails_admin_path, class: "nav-item nav-link" %>
+
       <%= link_to "Edit Profile", edit_user_registration_path	, class: "nav-item nav-link"%>
 
       <%= link_to "Sign-in", new_user_session_path, class: "nav-item nav-link"%>
