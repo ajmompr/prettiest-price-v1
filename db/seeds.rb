@@ -7,3 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # TODO: create admin user(s) here
+require 'securerandom'
+
+random_string = SecureRandom.hex(8)
+
+robohash_url = 'https://robohash.org/#{random_string}.png?set=set4'
+
+admin_password = ENV['TPP_ADMIN']
+User.create(admin: true, avatar: robohash_url, email: 'amomprem@uillinois.edu', password: admin_password, username: 'amomprem')
