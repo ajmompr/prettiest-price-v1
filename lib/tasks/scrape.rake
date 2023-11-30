@@ -3,7 +3,7 @@ namespace :scrape do
   task prices: :environment do
     p "Scraping prices...."
     # TODO: loop through listings
-    AmazonPriceScraper.new('B07XP8K162').scrape
+    AmazonPriceScraper.new('B00TTD9BRC').scrape
     p "Done"
   end
 end

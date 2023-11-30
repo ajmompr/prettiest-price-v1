@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'selenium-webdriver'
 
 class AmazonPriceScraper
-  BASE_URL = "https://www.amazon.com/CeraVe-Moisturizing-Cream-16-453/"
+  BASE_URL = "https://camelcamelcamel.com/product"
 
   attr_accessor :listing_id
 
@@ -24,7 +24,7 @@ class AmazonPriceScraper
     doc = Nokogiri::HTML(html)
 
     # Locate the price element using the CSS selector
-    price_element = doc.at_css('.a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay')
+    price_element = doc.css('green')
     # Extract the price text if the element exists
     if price_element
       price = price_element.text.strip
@@ -39,19 +39,23 @@ class AmazonPriceScraper
   private
 
   def listing_path
-    "dp/#{@listing_id}"
+    "/#{@listing_id}"
   end
 
   def fetch_html(url)
-    driver = Selenium::WebDriver.for(:chrome)
-
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+    
     options = Selenium::WebDriver::Chrome::Options.new
-    options.headless!
+    options.add_argument('--headless=new')
+    options.add_argument("--user-agent=#{user_agent}")
+    
+    # driver = Selenium::WebDriver.for(:chrome)
+    
     driver = Selenium::WebDriver.for(:chrome, capabilities: [options])
 
     driver.navigate.to url
-    wait = Selenium::WebDriver::Wait.new(timeout: 10)
-    wait.until { driver.find_element(class: "a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay") }
+    wait = Selenium::WebDriver::Wait.new(timeout: 30)
+    wait.until { driver.find_element(class: "price") }
     html = driver.page_source
     driver.quit
 
