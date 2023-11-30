@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'selenium-webdriver'
 
 class AmazonPriceScraper
-  BASE_URL = "https://www.amazon.com/"
+  BASE_URL = "https://www.amazon.com/CeraVe-Moisturizing-Cream-16-453/"
 
   attr_accessor :listing_id
 
@@ -41,26 +41,6 @@ class AmazonPriceScraper
   def listing_path
     "dp/#{@listing_id}"
   end
-
- task({ :scrape_parse_dynamic => :environment }) do
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--ignore-certificate-errors')
-  options.add_argument('--disable-popup-blocking')
-  options.add_argument('--disable-notification')
-  options.add_argument('--disable-translate')
-  options.add_argument('--headless=new') # try without
-  driver = Selenium::WebDriver.for :chrome, options: options
-  driver.navigate.to 'https://quotes.toscrape.com/js/'
-  quotes = driver.find_elements(class: 'quote')
-  quotes.each {|q|
-    #pp q.text
-    #pp q.attr("class")
-    quote_text = q.find_element(class: 'text').text
-    author =  q.find_element(class: 'author').text
-    puts "#{author}: #{quote_text}"
-    #debugger
-  }
-end
 
   def fetch_html(url)
     driver = Selenium::WebDriver.for(:chrome)
