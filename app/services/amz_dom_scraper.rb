@@ -23,7 +23,9 @@ class AmzDomScraper
  
     doc = Nokogiri::HTML(html)
 
-    price_data = doc.css("tr td")
+    # price_data = doc.css("tr td")
+    third_column_data = doc.css('table tr:first-child td:nth-child(4)').text
+    debugger
     price_data.each do |price|
       puts price.text
     end
