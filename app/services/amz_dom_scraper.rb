@@ -25,10 +25,11 @@ class AmzDomScraper
 
     # price_data = doc.css("tr td")
     third_column_data = doc.css('table tr:first-child td:nth-child(4)').text
-    debugger
-    price_data.each do |price|
-      puts price.text
-    end
+    puts third_column_data
+    # debugger
+    # price_data.each do |price|
+    #   puts price.text
+    # end
 
   rescue StandardError => e
     puts "Error: #{e}"
