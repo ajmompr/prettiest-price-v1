@@ -1,15 +1,19 @@
-
 <nav class="navbar navbar-expand-lg navbar-light pt-3">
-  <a class="navbar-brand ms-3" href="/">
-    <img class="landing-page-logo"src="/images/tpp_logo_words_black_pink_2.png" width="200" height="50">
-  </a>
+  <%= link_to(image_tag("/images/tpp_logo_words_black_pink_2.png", size: "200x50", alt: "The Prettiest Price Logo", class: "navbar-brand ms-3"), "/" )%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <!--<div class="navbar-nav">
-  
-      <a class="nav-item nav-link" href="/">My Account</a>
-    </div>-->
+    <div class="navbar-nav">
+      <%= link_to "Admin", rails_admin_path, class: "nav-item nav-link" %>
+
+      <%= link_to "Edit Profile", edit_user_registration_path	, class: "nav-item nav-link"%>
+
+      <%= link_to "Sign-in", new_user_session_path, class: "nav-item nav-link"%>
+
+      <%= link_to "Sign-out", destroy_user_session_path, data: { turbo_method: :delete}, class: "nav-item nav-link"%>
+
+      <%= link_to "Sign-up", new_user_registration_path, class: "nav-item nav-link"%>
+    </div>
   </div>
 </nav>
