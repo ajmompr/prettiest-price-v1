@@ -1,4 +1,5 @@
 class WaitlistEntriesController < ApplicationController
+  skip_before_action(:authenticate_user!)
   def create
     @waitlist_entry = WaitlistEntry.new(waitlist_entry_params)
     if @waitlist_entry.save
