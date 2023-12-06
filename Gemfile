@@ -118,3 +118,5 @@ gem "sentry-ruby", "~> 5.13"
 gem "sentry-rails", "~> 5.13"
 # TODO: do we need this? 
 # gem "cssbundling-rails"
+
+gem 'simple_form'
