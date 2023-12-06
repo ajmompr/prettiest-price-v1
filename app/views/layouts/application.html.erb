@@ -14,8 +14,10 @@
   </head>
 
   <body>
-    <div class="has-bg-img">
-      <div class="bg-img bg-cover " id="background-img">
+    <% if controller_name == 'static' && action_name == 'index' %>
+      <div class="has-bg-img">
+        <div class="bg-img bg-cover " id="background-img">
+    <% end %>
         <!-- Render the correct navbar based on current page -->
         <% if controller_name == 'static' && action_name == 'index' %>
           <%= render "shared/sticky_navbar"%>
