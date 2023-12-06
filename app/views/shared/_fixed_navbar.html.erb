@@ -13,7 +13,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     
     <!-- TO-DO: ADD REAL AUTHORIZATION-->
-    <% if current_user = @user && @user.admin == true %>
+    <% if current_user && current_user.admin? %>
         <li class="nav-item">
           <%= link_to "Admin", rails_admin_path, class: "nav-link" %>
         </li>
