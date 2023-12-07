@@ -12,6 +12,8 @@
     <table border=" 2px solid black">
       <tr>
         <th>
+        </th>
+        <th>
           Retailer
         </th>
         <th>
@@ -22,6 +24,9 @@
         </th>
       </tr>
       <tr>
+        <td>
+          <img src="<%= listing.retailer.image%>" alt="<%=listing.retailer.name%> logo">
+        </td>
         <td>
           <%= listing.retailer.name %>
         </td>
@@ -39,10 +44,6 @@
     </table>
 
   <% end %>
-  <p>
-    Retailer Place holder
-  </p>
-
   <hr>
   <h3>
     Price History

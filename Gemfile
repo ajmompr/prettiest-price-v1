@@ -120,3 +120,5 @@ gem "sentry-rails", "~> 5.13"
 # gem "cssbundling-rails"
 
 gem 'simple_form'
+
+gem 'groupdate'
