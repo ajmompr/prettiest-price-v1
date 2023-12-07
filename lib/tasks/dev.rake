@@ -54,35 +54,5 @@ task({ :sample_data => :environment }) do
   # Print number of listings
   p "You have added #{Snapshot.count} snapshots to the database!"
 
-  # # Create Amazon Retailer
-  # retailer = Retailer.new
-  # retailer.image = "testurl.url"
-  # retailer.listing_count = 0
-  # retailer.name = "Amazon"
-  # retailer.url = "https://www.amazon.com/"
-  # retailer.save
-
-  # # Create Target Retailer
-  # retailer = Retailer.new
-  # retailer.image = "testurl.url"
-  # retailer.listing_count = 0
-  # retailer.name = "Target"
-  # retailer.url = "https://www.target.com/"
-  # retailer.save
-
-  # # Create Ulta Retailer
-  # retailer = Retailer.new
-  # retailer.image = "testurl.url"
-  # retailer.listing_count = 0
-  # retailer.name = "Ulta"
-  # retailer.url = "https://www.ulta.com/"
-  # retailer.save
-
-  # # Create Walmart Retailer
-  # retailer = Retailer.new
-  # retailer.image = "testurl.url"
-  # retailer.listing_count = 0
-  # retailer.name = "Walmart"
-  # retailer.url = "https://www.walmart.com/"
-  # retailer.save
+  
 end
