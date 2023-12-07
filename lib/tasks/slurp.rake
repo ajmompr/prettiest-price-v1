@@ -5,7 +5,8 @@ namespace :slurp do
 
     csv_text = File.read(Rails.root.join("lib", "csvs", "amazon_snapshots.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
-    puts csv
+    csv.each do |row|
+      puts row.to_hash
+    end
   end
-
 end
