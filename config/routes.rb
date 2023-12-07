@@ -10,9 +10,14 @@ Rails.application.routes.draw do
 
   resources :listings
   resources :retailers
-  resources :snapshots
+  resources :snapshots do
+    collection do
+      get "snaps_by_day"
+    end
+  end
   resources :products
   resources :waitlist_entries, only: [:create]
+
 
   if Rails.env.development?
     mount RailsDb::Engine => "/rails/db", :as => "rails_db_admin"
