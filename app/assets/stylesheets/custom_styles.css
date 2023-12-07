@@ -1,12 +1,19 @@
 body {
-  background-color: #d2bfc0; 
   height:100vh;
+  background-color: white; 
+
+/* TO-DO: Create separate CSS for landing page vs application pages */
+  /* background-color: #d2bfc0;  */
+}
+
+.main {
+
 }
 
 #background-img{
   background-image: url('/images/background-2.jpg');
   background-repeat: no-repeat; 
-  background-size: cover;
+  background-size: 100%;
 }
 
 .emphasized-low-word{
@@ -27,4 +34,8 @@ body {
 }
 .error-msg {
   min-height: 100vh;
+}
+
+.product-container {
+  background: white;
 }

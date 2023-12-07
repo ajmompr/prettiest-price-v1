@@ -1,10 +1,73 @@
-<p style="color: green"><%= notice %></p>
+<div class="container product-container">
+  <p style="color: green"><%= notice %></p>
+  <%= render @product %>
 
-<%= render @product %>
+  <hr>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
+  <h3>
+    Prices
+  </h3>
 
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <% @product.listings.each do |listing|%>
+    <table border=" 2px solid black">
+      <tr>
+        <th>
+          Retailer
+        </th>
+        <th>
+          Link to Retailer
+        </th>
+        <th>
+          Current Price
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <%= listing.retailer.name %>
+        </td>
+
+        <td>
+          <a href="<%= listing.url %>">
+            Click here
+          </a>
+        </td>
+
+        <td>
+          $Price Placeholder
+        </td>
+      </tr>
+    </table>
+
+  <% end %>
+  <p>
+    Retailer Place holder
+  </p>
+
+  <hr>
+  <h3>
+    Price History
+  </h3>
+  <p>
+    Amazon Chart Tab
+  </p>
+  <p>
+    Target Chart Tab
+  </p>
+  <p>
+    Ulta Chart Tab
+  </p>
+  <p>
+    Walmart
+  </p>
+
+  <div>
+
+    <!-- TO DO; Permanently remove unncessary links -->
+
+    <%#= link_to "Edit this product", edit_product_path(@product) %>
+
+    <%= link_to "Back to products", products_path %>
+
+    <%#= button_to "Destroy this product", @product, method: :delete %>
+  </div>
 </div>
