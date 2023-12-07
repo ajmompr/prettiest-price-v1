@@ -37,4 +37,36 @@ csv.each do |row|
   t.save
 end
 
-# Add Wal
+# Add Target Snapshot Seed data
+csv_text = File.read(Rails.root.join("lib", "csvs", "target_snapshots.csv"))
+csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+csv.each do |row|
+  t = Snapshot.new
+  t.price = row["price"]
+  t.snapshot_date = row["date"]
+  t.listing_id = row["listing_id"]
+  t.save
+end
+
+
+# Add Ulta Snapshot seed data
+csv_text = File.read(Rails.root.join("lib", "csvs", "ulta_snapshots.csv"))
+csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+csv.each do |row|
+  t = Snapshot.new
+  t.price = row["price"]
+  t.snapshot_date = row["date"]
+  t.listing_id = row["listing_id"]
+  t.save
+end
+
+# Add Walmart Snapshot Seed data
+csv_text = File.read(Rails.root.join("lib", "csvs", "walmart_snapshots.csv"))
+csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+csv.each do |row|
+  t = Snapshot.new
+  t.price = row["price"]
+  t.snapshot_date = row["date"]
+  t.listing_id = row["listing_id"]
+  t.save
+end
