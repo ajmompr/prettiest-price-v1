@@ -7,8 +7,40 @@
   <h3>
     Prices
   </h3>
+
+  <% @product.listings.each do |listing|%>
+    <table border=" 2px solid black">
+      <tr>
+        <th>
+          Retailer
+        </th>
+        <th>
+          Link to Retailer
+        </th>
+        <th>
+          Current Price
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <%= listing.retailer.name %>
+        </td>
+
+        <td>
+          <a href="<%= listing.url %>">
+            Click here
+          </a>
+        </td>
+
+        <td>
+         $Price Placeholder
+        </td>
+      </tr>
+    </table>
+
+  <% end %>
   <p>
-  Retailer Place holder
+    Retailer Place holder
   </p>
 
   <hr>
