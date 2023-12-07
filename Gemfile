@@ -121,4 +121,6 @@ gem "sentry-rails", "~> 5.13"
 
 gem 'simple_form'
 
+gem 'chartkick'
+
 gem 'groupdate'
