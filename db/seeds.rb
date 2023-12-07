@@ -19,7 +19,7 @@ User.create(admin: true, avatar: robohash_url, email: "amomprem@uillinois.edu", 
 # Create MVP Product Here
 Product.create(description: "CeraVe Moisturizing Cream is a rich, non-greasy, fast-absorbing moisturizer for normal to dry skin on the face and body.", image: "app/assets/images/cerave_bodycream_16_oz.png", name: "CeraVe Moisturizing Cream", product_volume: 16)
 
-# TODO: create retailer(s) here
+# Add listing seed data
 Listing.create(url: "https://www.amazon.com/dp/B00TTD9BRC?tag=camelweb-20&linkCode=ogi&th=1&psc=1&language=en_US", product_id: 11, retailer_id: 10)
 Listing.create(url: "https://www.target.com/p/cerave-moisturizing-cream-unscented-16-fl-oz/-/A-13977967#lnk=sametab", product_id: 11, retailer_id: 11)
 Listing.create(url: "https://www.ulta.com/p/moisturizing-cream-with-hyaluronic-acid-balanced-dry-skin-xlsImpprod3530069", product_id: 11, retailer_id: 12)
