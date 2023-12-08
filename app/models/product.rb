@@ -14,4 +14,6 @@ class Product < ApplicationRecord
   has_many  :listings, class_name: "Listing", foreign_key: "product_id", dependent: :destroy
 
   has_many :retailers, through: :listings, source: :retailer
+
+  has_many :snapshots, through: :listings, source: :snapshot
 end
