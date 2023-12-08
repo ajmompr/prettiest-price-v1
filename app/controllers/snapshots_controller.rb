@@ -58,7 +58,7 @@ class SnapshotsController < ApplicationController
   end
 
   def snaps_by_day
-    render json: Snapshot.group_by_day(:snapshot_date).sum(:price)
+    render json: Snapshot.where(listing_id: params[:listing_id]).group_by_day(:snapshot_date).sum(:price)
   end
 
   private
