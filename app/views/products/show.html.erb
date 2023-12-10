@@ -46,6 +46,7 @@
       </h1>
       <% @product.listings.each do |listing|%>
         <div>
+          <h5><%= listing.retailer.name %></h5>
           <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
         </div>
       <% end %>
@@ -58,19 +59,20 @@
       </h1>
       <p> Product Name </p>
       <p> Brand </p>
-      <p> Product Volume <p>
-      <p> Category </p>
-      <p>Created at The Pretty Price</p>
+      <p> Product Volume 
+        <p>
+          <p> Category </p>
+          <p>Created at The Pretty Price</p>
+        </div>
+
+      </div>
+
+      <!-- TO DO; Permanently remove unncessary links -->
+
+      <%#= link_to "Edit this product", edit_product_path(@product) %>
+
+      <%= link_to "Back to products", products_path %>
+
+      <%#= button_to "Destroy this product", @product, method: :delete %>
     </div>
-
   </div>
-
-  <!-- TO DO; Permanently remove unncessary links -->
-
-  <%#= link_to "Edit this product", edit_product_path(@product) %>
-
-  <%= link_to "Back to products", products_path %>
-
-  <%#= button_to "Destroy this product", @product, method: :delete %>
-</div>
-</div>
