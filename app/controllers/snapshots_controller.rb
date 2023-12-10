@@ -57,6 +57,10 @@ class SnapshotsController < ApplicationController
     end
   end
 
+  def snaps_by_day
+    render json: Snapshot.where(listing_id: params[:listing_id]).group_by_day(:snapshot_date).sum(:price)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_snapshot

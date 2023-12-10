@@ -7,7 +7,6 @@
   <h3>
     Prices
   </h3>
-
   <% @product.listings.each do |listing|%>
     <table border=" 2px solid black">
       <tr>
@@ -25,7 +24,50 @@
       </tr>
       <tr>
         <td>
-          <img src="<%= listing.retailer.image%>" alt="<%=listing.retailer.name%> logo">
+          <img src="<%= listing.retailer.image%>" class="retailer-logo" alt="<%=listing.retailer.name%> logo">
+        </td>
+        <td>
+          <%= listing.retailer.name %>
+        </td>
+
+        <td>
+          <a href="<%= listing.url %>">
+            Click here
+          </a>
+        </td>
+
+        <td>
+          $Price Placeholder
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
+
+  <h3>
+    Price History
+  </h3>
+  <% @product.listings.each do |listing|%>
+      <p>
+      <%= listing.retailer.name %> Chart Tab
+    </p>
+    <table border=" 2px solid black">
+      <tr>
+        <th>
+        </th>
+        <th>
+          Retailer
+        </th>
+        <th>
+          Link to Retailer
+        </th>
+        <th>
+          Current Price
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <img src="<%= listing.retailer.image%>" class="retailer-logo" alt="<%=listing.retailer.name%> logo">
         </td>
         <td>
           <%= listing.retailer.name %>
@@ -43,24 +85,12 @@
       </tr>
     </table>
 
-  <% end %>
-  <hr>
-  <h3>
-    Price History
-  </h3>
-  <p>
-    Amazon Chart Tab
-  </p>
-  <p>
-    Target Chart Tab
-  </p>
-  <p>
-    Ulta Chart Tab
-  </p>
-  <p>
-    Walmart
-  </p>
 
+
+    <div>
+      <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
+    </div>
+  <% end %>
   <div>
 
     <!-- TO DO; Permanently remove unncessary links -->
