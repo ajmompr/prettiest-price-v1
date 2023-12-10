@@ -3,24 +3,26 @@
   <%= render @product %>
 
   <hr>
-
+  <!-- Nav tabs -->
   <ul class="nav nav-underline nav-fill" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="current-prices-tab" data-bs-toggle="tab" data-bs-target="#current-prices-tab-pane" type="button" role="tab" aria-controls="current-prices-tab-pane" aria-selected="true">Current Prices</button>
+      <button class="nav-link active" id="current-prices-tab" data-bs-toggle="tab" data-bs-target="#current-prices" type="button" role="tab" aria-controls="current-prices" aria-selected="true">Current Prices</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="inactive-post-tab" data-bs-toggle="tab" data-bs-target="#inactive-post-tab-pane" type="button" role="tab" aria-controls="inactive-post-tab-pane" aria-selected="false">Price History</button>
+      <button class="nav-link" id="price-history-tab" data-bs-toggle="tab" data-bs-target="#price-history" type="button" role="tab" aria-controls="price-history" aria-selected="false">Price History</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="inactive-post-tab" data-bs-toggle="tab" data-bs-target="#inactive-post-tab-pane" type="button" role="tab" aria-controls="inactive-post-tab-pane" aria-selected="false">Product Information </button>
+      <button class="nav-link" id="product-info-tab" data-bs-toggle="tab" data-bs-target="#product-info" type="button" role="tab" aria-controls="product-info" aria-selected="false">Product Information</button>
     </li>
   </ul>
 
-  <!-- Prices Tab & Current Retailer Prices -->
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="current-prices-tab-pane" role="tabpanel" aria-labelledby="current-prices-tab" tabindex="0">
-        <% @product.listings.each do |listing|%>
-      <div class="row g-0">
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="current-prices" role="tabpanel" aria-labelledby="current-prices-tab" tabindex="0">
+      <h1>
+        Current Prices
+      </h1>
+      <% @product.listings.each do |listing|%>
         <div class="card w-100 text-end">
           <div class="row g-0">
             <div class="col-md-4">
@@ -35,137 +37,35 @@
             </div>
           </div>
         </div>
-          <% end %>
-      </div>
+      <% end %>
     </div>
-  </div>
-  <hr>
 
-  <!-- PRICE HX TAB & PRICE HX CHARTS -->
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="inactive-post-tab-pane" role="tabpanel" aria-labelledby="inactive-post-tab" tabindex="0">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-     
-        <div class="col">
-          <div class="card text-bg-light mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-              <div>
-                <h6>
-               
-                </h6>
-              </div>
-              <div> 
-           
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text"></p>
-            </div>
-            <div class="card-footer">
-         
-            </div>
-          </div>
+    <div class="tab-pane" id="price-history" role="tabpanel" aria-labelledby="price-history-tab" tabindex="0">
+      <h1>
+        Px Hx
+      </h1>
+      <% @product.listings.each do |listing|%>
+        <div>
+          <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
         </div>
+      <% end %>
 
     </div>
+
+    <div class="tab-pane" id="product-info" role="tabpanel" aria-labelledby="product-info-tab" tabindex="0">
+      <h1>
+        Prod Info
+      </h1>
+    </div>
+
   </div>
+
+  <!-- TO DO; Permanently remove unncessary links -->
+
+  <%#= link_to "Edit this product", edit_product_path(@product) %>
+
+  <%= link_to "Back to products", products_path %>
+
+  <%#= button_to "Destroy this product", @product, method: :delete %>
 </div>
-
-
-  <h3>
-    Prices
-  </h3>
-  <% @product.listings.each do |listing|%>
-    <table border=" 2px solid black">
-      <tr>
-        <th>
-        </th>
-        <th>
-          Retailer
-        </th>
-        <th>
-          Link to Retailer
-        </th>
-        <th>
-          Current Price
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <img src="<%= listing.retailer.image%>" class="retailer-logo" alt="<%=listing.retailer.name%> logo">
-        </td>
-        <td>
-          <%= listing.retailer.name %>
-        </td>
-
-        <td>
-          <a href="<%= listing.url %>">
-            Click here
-          </a>
-        </td>
-
-        <td>
-          $Price Placeholder
-        </td>
-      </tr>
-    <% end %>
-  </table>
-  <hr>
-
-  <h3>
-    Price History
-  </h3>
-
-  <% @product.listings.each do |listing|%>
-    <p>
-      <%= listing.retailer.name %> Chart Tab
-    </p>
-    <table border=" 2px solid black">
-      <tr>
-        <th>
-        </th>
-        <th>
-          Retailer
-        </th>
-        <th>
-          Link to Retailer
-        </th>
-        <th>
-          Current Price
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <img src="<%= listing.retailer.image%>" class="retailer-logo" alt="<%=listing.retailer.name%> logo">
-        </td>
-        <td>
-          <%= listing.retailer.name %>
-        </td>
-
-        <td>
-          <a href="<%= listing.url %>">
-            Click here
-          </a>
-        </td>
-
-        <td>
-          $Price Placeholder
-        </td>
-      </tr>
-    </table>
-
-    <div>
-      <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
-    </div>
-  <% end %>
-  <div>
-
-    <!-- TO DO; Permanently remove unncessary links -->
-
-    <%#= link_to "Edit this product", edit_product_path(@product) %>
-
-    <%= link_to "Back to products", products_path %>
-
-    <%#= button_to "Destroy this product", @product, method: :delete %>
-  </div>
 </div>
