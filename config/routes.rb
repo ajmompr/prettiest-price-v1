@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :retailers
   resources :snapshots do
     collection do
-      get "amz_snaps_by_day"
+      get "snaps_by_day"
     end
   end
   resources :products
