@@ -4,6 +4,74 @@
 
   <hr>
 
+  <ul class="nav nav-underline nav-fill" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="current-prices-tab" data-bs-toggle="tab" data-bs-target="#current-prices-tab-pane" type="button" role="tab" aria-controls="current-prices-tab-pane" aria-selected="true">Current Prices</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="inactive-post-tab" data-bs-toggle="tab" data-bs-target="#inactive-post-tab-pane" type="button" role="tab" aria-controls="inactive-post-tab-pane" aria-selected="false">Price History</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="inactive-post-tab" data-bs-toggle="tab" data-bs-target="#inactive-post-tab-pane" type="button" role="tab" aria-controls="inactive-post-tab-pane" aria-selected="false">Product Information </button>
+    </li>
+  </ul>
+
+  <!-- Prices Tab & Current Retailer Prices -->
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="current-prices-tab-pane" role="tabpanel" aria-labelledby="current-prices-tab" tabindex="0">
+        <% @product.listings.each do |listing|%>
+      <div class="row g-0">
+        <div class="card w-100 text-end">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="<%= listing.retailer.image%>" class="img-fluid rounded-start retailer-logo" alt="<%=listing.retailer.name%> logo">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">$<%= listing.snapshots.order(snapshot_date: :desc).first.price%></h5>
+                <p class="card-text"><a href="<%=listing.url%>">View Listing</a>  </p>
+                <p class="card-text"><small class="text-body-secondary">Last updated <%= listing.snapshots.maximum(:snapshot_date).strftime("%D")%></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- PRICE HX TAB & PRICE HX CHARTS -->
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="inactive-post-tab-pane" role="tabpanel" aria-labelledby="inactive-post-tab" tabindex="0">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+     
+        <div class="col">
+          <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <div>
+                <h6>
+               
+                </h6>
+              </div>
+              <div> 
+           
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+         
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
   <h3>
     Prices
   </h3>
@@ -47,8 +115,9 @@
   <h3>
     Price History
   </h3>
+
   <% @product.listings.each do |listing|%>
-      <p>
+    <p>
       <%= listing.retailer.name %> Chart Tab
     </p>
     <table border=" 2px solid black">
@@ -84,8 +153,6 @@
         </td>
       </tr>
     </table>
-
-
 
     <div>
       <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
