@@ -39,3 +39,9 @@ body {
 .product-container {
   background: white;
 }
+
+.retailer-logo {
+  width: 200px;
+  height: 50px
+
+}
