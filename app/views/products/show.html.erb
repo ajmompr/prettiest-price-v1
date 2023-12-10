@@ -43,26 +43,18 @@
       </tr>
     </table>
 
+    <hr>
+    <h3>
+      Price History
+    </h3>
+    <!--JUST WANTED TO TEST CHART/ TO BE REMOVED-->
+    <p>
+      <%= listing.retailer.name %> Chart Tab
+    </p>
+    <div>
+      <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
+    </div>
   <% end %>
-  <hr>
-  <h3>
-    Price History
-  </h3>
-  <!--JUST WANTED TO TEST CHART/ TO BE REMOVED-->
-  <%= line_chart snaps_by_day_snapshots_path %>
-  <p>
-    Amazon Chart Tab
-  </p>
-  <p>
-    Target Chart Tab
-  </p>
-  <p>
-    Ulta Chart Tab
-  </p>
-  <p>
-    Walmart
-  </p>
-
   <div>
 
     <!-- TO DO; Permanently remove unncessary links -->
