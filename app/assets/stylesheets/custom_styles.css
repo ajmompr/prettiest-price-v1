@@ -27,7 +27,7 @@ body {
 }
 .landing-page-logo {
 }
-#join-waitlist-btn {
+#join-waitlist-btn, #sign-in-button {
   background-color: #F84791;
   color: white;
 }
