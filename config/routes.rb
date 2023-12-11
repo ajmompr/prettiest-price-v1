@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
 
     # root to: "devise/sessions#new"
-  devise_scope :user do
-    get "/" => "devise/sessions#new"
-  end
+ root to: "static#index"
+ 
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
