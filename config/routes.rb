@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     mount(RailsAdmin::Engine, { :at => "admin", :as => "rails_admin" })
   end
   
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
