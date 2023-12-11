@@ -1,20 +1,25 @@
-<h2>Log in</h2>
+<main class="main">
+  <section class="hero-section" style="width: 100vw; height: 100vh;">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+      <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-1 mb-3">Highlighting the <br>
+            <span class="emphasized-low-word">(low)</span> price of beauty.
+          </h1>
+          <p class="col-lg-10 fs-4">
+            <span class="coming-soon">The Prettiest Price is coming soon! <br>
+            </span>
+            <span class="landing-page-copy">
+              Join us on our mission to help shoppers find the best deals on all things beauty and personal care. Sign-up for the waitlist! 
+              <br>
+            </span>
+          </p>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+        </div>
+        <%= render partial: "devise/registrations/form"%>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+      </div>
 
-<%= render "devise/shared/links" %>
+    </div>
+  </section>
+</main>
