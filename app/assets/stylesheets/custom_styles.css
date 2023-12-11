@@ -60,6 +60,12 @@ body {
   font-size: 20px;
 }
 
+/* Style Index Page */
+.product-logo {
+  max-width: 250px;
+  height: 200px;
+}
+
 /* Style links
 /* unvisited link */
 /* a:link {
