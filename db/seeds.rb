@@ -14,13 +14,13 @@ admin_password = ENV["TPP_ADMIN"]
 User.create(admin: true, avatar: robohash_url, email: "amomprem@uillinois.edu", password: admin_password, username: "amomprem")
 
 # Create MVP Product Here
-Product.create(brand: "CeraVe", category: "Personal Care", description: "CeraVe Moisturizing Cream is a rich, non-greasy, fast-absorbing moisturizer for normal to dry skin on the face and body.", image: "app/assets/images/cerave_bodycream_16_oz.png", name: "CeraVe Moisturizing Cream", product_volume: 16)
+Product.create(brand: "CeraVe", category: "Personal Care", description: "CeraVe Moisturizing Cream is a rich, non-greasy, fast-absorbing moisturizer for normal to dry skin on the face and body.", image: "https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/products-v4/moisturizing-cream/cerave_moisturizing_cream_16oz_jar_front-700x875-v3.jpg?rev=db6e3c22250e4928bc749dd2c207de5b&w=500&hash=6F959AC16DA324FFB9DCE0C5BFDC8AD5", name: "CeraVe Moisturizing Cream", product_volume: 16)
 
 # Create Image Paths for retailer logos
-amz_img_path = File.join(Rails.root, "app", "assets", "images", "amazon_logo.png")
-target_img_path = File.join(Rails.root, "app", "assets", "images", "target_logo.png")
-ulta_img_path = File.join(Rails.root, "app", "assets", "images", "ulta_logo.png")
-walmart_img_path = File.join(Rails.root, "app", "assets", "images", "walmart_logo.png")
+amz_img_path = "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+target_img_path = "https://upload.wikimedia.org/wikipedia/commons/9/9a/Target_logo.svg"
+ulta_img_path = "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ulta_Beauty_logo.svg"
+walmart_img_path = "https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg"
 
 # # Add amazon retailer
 Retailer.create(image: amz_img_path, name: "Amazon", url: "https://www.amazon.com/")
