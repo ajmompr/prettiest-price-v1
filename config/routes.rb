@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     #   root to: "devise/sessions#new"
     # end
 
- root to: "static#index"
+ root to: "products#index"
 
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
