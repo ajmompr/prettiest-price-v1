@@ -19,9 +19,6 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active" id="current-prices" role="tabpanel" aria-labelledby="current-prices-tab" tabindex="0">
-      <h1>
-        Current Prices
-      </h1>
       <% @product.listings.each do |listing|%>
         <div class="card w-100 text-end">
           <div class="row g-0">
@@ -41,38 +38,55 @@
     </div>
 
     <div class="tab-pane" id="price-history" role="tabpanel" aria-labelledby="price-history-tab" tabindex="0">
-      <h1>
-        Px Hx
-      </h1>
-      <% @product.listings.each do |listing|%>
-        <div>
-          <h5><%= listing.retailer.name %></h5>
-          <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }) %>
-        </div>
-      <% end %>
 
-    </div>
 
-    <div class="tab-pane" id="product-info" role="tabpanel" aria-labelledby="product-info-tab" tabindex="0">
-      <h1>
-        Prod Info
-      </h1>
-      <p> Product Name </p>
-      <p> Brand </p>
-      <p> Product Volume 
-        <p>
-          <p> Category </p>
-          <p>Created at The Pretty Price</p>
+      <div class="container mt-4">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <% @product.listings.each_with_index do |listing, index| %>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link <%= index.zero? ? 'active' : '' %>" id="tab<%= index %>" data-bs-toggle="tab" data-bs-target="#graph<%= index %>" type="button" role="tab" aria-controls="graph<%= index %>" aria-selected="<%= index.zero? %>">
+                <%= listing.retailer.name %>
+              </button>
+            </li>
+          <% end %>
+        </ul>
+
+        <div class="tab-content mt-3" id="myTabContent">
+          <% @product.listings.each_with_index do |listing, index| %>
+            <div class="tab-pane fade <%= index.zero? ? 'show active' : '' %>" id="graph<%= index %>" role="tabpanel" aria-labelledby="tab<%= index %>">
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title"><%= listing.retailer.name %></h5>
+                  <%= line_chart snaps_by_day_snapshots_path({ listing_id: listing.id }), colors: ["#F84791", "#666"], xtitle: "Date", ytitle: "Price ($ USD)" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
+      </div>
 
       </div>
 
-      <!-- TO DO; Permanently remove unncessary links -->
+      <div class="tab-pane" id="product-info" role="tabpanel" aria-labelledby="product-info-tab" tabindex="0">
+        <h1>
+          Prod Info
+        </h1>
 
-      <%#= link_to "Edit this product", edit_product_path(@product) %>
+        <p> Product Name </p>
+        <p> Brand </p>
+        <p> Product Volume </p>
+        <p> Category </p>
+        <p>Created at The Pretty Price</p>
+      </div>
 
-      <%= link_to "Back to products", products_path %>
-
-      <%#= button_to "Destroy this product", @product, method: :delete %>
     </div>
+
+    <!-- TO DO; Permanently remove unncessary links -->
+
+    <%#= link_to "Edit this product", edit_product_path(@product) %>
+
+    <%= link_to "Back to products", products_path %>
+
+    <%#= button_to "Destroy this product", @product, method: :delete %>
   </div>
+</div>
