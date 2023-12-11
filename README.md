@@ -1,16 +1,16 @@
 # The Prettiest Price - v1
-
+## Description
 The Prettiest Price is a price comparison tool that allows savvy shoppers to find the lowest (aka "prettiest") prices on all of their personal care and beauty staples. 
 
-# Ruby & Rails info
-
-This is a base Ruby on Rails repository configured for learning with Codespaces (and Gitpod).
-
+## Ruby & Rails info
 - Ruby version: `3.2.1`
 - Rails version: `7.0.4.3`
 
-
-We've added additional Ruby gems and other software that aren't automatically available in a new Rails app.
+## Gems to install
+#### Run `bundle install`
+- gem 'simple_form'
+- gem 'chartkick'
+- gem 'groupdate'
 
 ### Additional gems:
 
