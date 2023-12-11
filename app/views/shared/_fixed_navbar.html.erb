@@ -3,7 +3,7 @@
   2. Update links to the correct paths
 
 -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <%= link_to(image_tag("/images/tpp_logo_words_black_pink_2.png", size: "200x50", alt: "The Prettiest Price Logo", class: "navbar-brand ms-3"), "/" )%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,14 +19,12 @@
         </li>
     <% end %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            All Categories
+          <a class="nav-link dropdown-toggle" href="/products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Beauty</a></li>
-            <li><a class="dropdown-item" href="#">Personal Care</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Hot Deals</a></li>
+            <li><a class="dropdown-item" href="/products">Beauty</a></li>
+            <li><a class="dropdown-item" href="/products">Personal Care</a></li>
           </li>
         </ul>
       </ul>
@@ -34,15 +32,11 @@
       <!-- Right-aligned navbar item-->
       <div class="dropdown mx-3">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          My Account & Faves
+          My Account
         </a>
         <ul class="dropdown-menu dropdwon-menu-end" aria-labelledby="dropdownMenuLink">
         <% if user_signed_in? %>
-          <li>
-            <a class="nav-item nav-link mx-3" href="#">
-            My Faves
-            </a>
-          </li>
+
           <li>
             <%= link_to "Edit Profile", edit_user_registration_path	, class: "nav-item nav-link mx-3" %>
           </li>

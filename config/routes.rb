@@ -5,6 +5,14 @@ Rails.application.routes.draw do
   end
   
   devise_for :users
+
+    # root to: "devise/sessions#new"
+    # devise_scope :user do
+    #   root to: "devise/sessions#new"
+    # end
+
+ root to: "products#index"
+
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
@@ -24,7 +32,7 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/") 
-  root to: "static#index"
+
 
   match "*umatched_route", to: "errors#not_found", via: :all
 end
