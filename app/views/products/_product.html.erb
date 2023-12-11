@@ -2,11 +2,11 @@
   <div class= id="<%= dom_id product %>">
     <div class= "container">
       <div class="row">
-        <div class="product-image pt-4 col-lg-7 col-12 order-lg-1 order-2">
+        <div class="product-image mt- pt-4 col-lg-7 col-12 order-lg-1 order-2">
           <img src="<%= product.image %>">
         </div>
 
-        <div class="product-info-pane ps-lg-4 col-lg-5 col-12 order-lg-2 order-1">
+        <div class="product-info-pane pt-5 mt-5 ps-lg-4 col-lg-5 col-12 order-lg-2 order-1">
           <div class="product-name">
             <strong><%= product.name %></strong>
           </div>
@@ -18,7 +18,7 @@
 
           <div class="product-volume">
             <strong>Product Volume:</strong>
-            <%= product.product_volume %> oz
+            <p><%= product.product_volume %> oz</p>
           </div>
         </div>
       </div>

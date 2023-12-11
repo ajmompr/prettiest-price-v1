@@ -1,10 +1,10 @@
-<div class="container product-container">
+<div class="container product-container mb-5">
   <p style="color: green"><%= notice %></p>
   <%= render @product %>
 
   <hr>
   <!-- Nav tabs -->
-  <ul class="nav nav-underline nav-fill" id="myTab" role="tablist">
+  <ul class="nav nav-underline nav-fill mb-3" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="current-prices-tab" data-bs-toggle="tab" data-bs-target="#current-prices" type="button" role="tab" aria-controls="current-prices" aria-selected="true">Current Prices</button>
     </li>
@@ -18,12 +18,12 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div class="tab-pane active" id="current-prices" role="tabpanel" aria-labelledby="current-prices-tab" tabindex="0">
+    <div class="tab-pane active mb-3" id="current-prices" role="tabpanel" aria-labelledby="current-prices-tab" tabindex="0">
       <% @product.listings.each do |listing|%>
         <div class="card w-100 text-end">
           <div class="row g-0">
-            <div class="col-md-4">
-              <img src="<%= listing.retailer.image%>" class="img-fluid rounded-start retailer-logo" alt="<%=listing.retailer.name%> logo">
+            <div class="mt-3 col-md-4">
+              <a href="<%=listing.url%>"><img src="<%= listing.retailer.image%>" class="img-fluid rounded-start retailer-logo" alt="<%=listing.retailer.name%> logo"></a>
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -39,9 +39,8 @@
 
     <div class="tab-pane" id="price-history" role="tabpanel" aria-labelledby="price-history-tab" tabindex="0">
 
-
       <div class="container mt-4">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-fill nav-tabs" id="myTab" role="tablist">
           <% @product.listings.each_with_index do |listing, index| %>
             <li class="nav-item" role="presentation">
               <button class="nav-link <%= index.zero? ? 'active' : '' %>" id="tab<%= index %>" data-bs-toggle="tab" data-bs-target="#graph<%= index %>" type="button" role="tab" aria-controls="graph<%= index %>" aria-selected="<%= index.zero? %>">
@@ -65,28 +64,29 @@
         </div>
       </div>
 
-      </div>
-
-      <div class="tab-pane" id="product-info" role="tabpanel" aria-labelledby="product-info-tab" tabindex="0">
-        <h1>
-          Prod Info
-        </h1>
-
-        <p> Product Name </p>
-        <p> Brand </p>
-        <p> Product Volume </p>
-        <p> Category </p>
-        <p>Created at The Pretty Price</p>
-      </div>
-
     </div>
 
-    <!-- TO DO; Permanently remove unncessary links -->
+    <div class="tab-pane" id="product-info" role="tabpanel" aria-labelledby="product-info-tab" tabindex="0">
+      <h1>
+        Prod Info
+      </h1>
 
-    <%#= link_to "Edit this product", edit_product_path(@product) %>
+      <p> Product Name </p>
+      <p> Brand </p>
+      <p> Product Volume </p>
+      <p> Category </p>
+      <p>Created at The Pretty Price</p>
+    </div>
 
-    <%= link_to "Back to products", products_path %>
-
-    <%#= button_to "Destroy this product", @product, method: :delete %>
   </div>
+
+  <!-- TO DO; Permanently remove unncessary links -->
+
+  <%#= link_to "Edit this product", edit_product_path(@product) %>
+  <div class="back-to-products mb-">
+    <%= link_to "Back to products", products_path %>
+  </div>
+
+  <%#= button_to "Destroy this product", @product, method: :delete %>
+</div>
 </div>
