@@ -14,7 +14,7 @@ admin_password = ENV["TPP_ADMIN"]
 User.create(admin: true, avatar: robohash_url, email: "amomprem@uillinois.edu", password: admin_password, username: "amomprem")
 
 # Create MVP Product Here
-Product.create(description: "CeraVe Moisturizing Cream is a rich, non-greasy, fast-absorbing moisturizer for normal to dry skin on the face and body.", image: "app/assets/images/cerave_bodycream_16_oz.png", name: "CeraVe Moisturizing Cream", product_volume: 16)
+Product.create(brand: "CeraVe", category: "Personal Care", description: "CeraVe Moisturizing Cream is a rich, non-greasy, fast-absorbing moisturizer for normal to dry skin on the face and body.", image: "app/assets/images/cerave_bodycream_16_oz.png", name: "CeraVe Moisturizing Cream", product_volume: 16)
 
 # Create Image Paths for retailer logos
 amz_img_path = File.join(Rails.root, "app", "assets", "images", "amazon_logo.png")

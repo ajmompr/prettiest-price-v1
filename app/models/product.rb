@@ -3,6 +3,8 @@
 # Table name: products
 #
 #  id             :integer          not null, primary key
+#  brand          :string
+#  category       :string
 #  description    :string
 #  image          :string
 #  name           :string
