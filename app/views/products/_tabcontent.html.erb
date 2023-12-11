@@ -53,28 +53,28 @@
      
       <tbody>
         <tr>
-          <td>
+          <td><strong>
             Product Name
-          </td>
+          </strong></td>
           <td>
-            Name Place Holder
+            <%= @product.name %>
           </td>
         </tr>
         <tr>
-          <td>Brand</td>
+          <td><strong>Brand</strong></td>
           <td>Brand Place Holder</td>
         </tr>
         <tr>
-          <td>Product Volume</td>
-          <td>Volume Place Holder</td>
+          <td><strong>Product Volume</strong></td>
+          <td><%= @product.product_volume %> oz </td>
         </tr>
         <tr>
-          <td>Product Category</td>
+          <td><strong>Product Category</strong></td>
           <td>Category Place Holder</td>
         </tr>
         <tr>
-          <td>Created on the Prettiest Price</td>
-          <td>Created on Date</td>
+          <td><strong>Created on the Prettiest Price</strong></td>
+          <td><%= @product.created_at.strftime("%D")%></td>
         </tr>
         <tbody>
         </table>
