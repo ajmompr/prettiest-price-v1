@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # TODO: restrict to only admins
-  authenticate(:user, lambda { |user| user.admin? }) do
-    mount(RailsAdmin::Engine, { :at => "admin", :as => "rails_admin" })
+  authenticate :user, ->(user) { user.admin? } do
+    mount RailsAdmin::Engine, at: "admin", as: "rails_admin"
   end
   
   devise_for :users
