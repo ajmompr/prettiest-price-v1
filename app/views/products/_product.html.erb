@@ -1,23 +1,28 @@
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
+<section class="product-details">
+  <div class= id="<%= dom_id product %>">
+    <div class= "container">
+      <div class="row">
+        <div class="product-image pt-4 col-lg-7 col-12 order-lg-1 order-2">
+          <img src="<%= product.image %>">
+        </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
+        <div class="product-info-pane ps-lg-4 col-lg-5 col-12 order-lg-2 order-1">
+          <div class="product-name">
+            <strong><%= product.name %></strong>
+          </div>
 
-  <p>
-    <strong>Image:</strong>
-    <img src="<%= product.image %>">
-    
-  </p>
+          <div class="product-description">
+            <strong>Description:</strong>
+            <%= product.description %>
+          </div>
 
-   <p>
-    <strong>Product Volume:</strong>
-    <%= product.product_volume %>
-  </p>
- 
-</div>
+          <div class="product-volume">
+            <strong>Product Volume:</strong>
+            <%= product.product_volume %> oz
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
