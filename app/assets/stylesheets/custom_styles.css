@@ -7,7 +7,6 @@ body {
 }
 
 .main {
-
 }
 
 #background-img{
@@ -41,7 +40,43 @@ body {
 }
 
 .retailer-logo {
-  width: 200px;
-  height: 50px
+  width: 250px;
+  height: 100px
 
 }
+
+/* Style the Product Show Page */
+.product-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 40px
+}
+
+.product-description {
+  font-size: 20px; 
+}
+
+.product-volume {
+  font-size: 20px;
+}
+
+/* Style links
+/* unvisited link */
+/* a:link {
+  color: #F84791;
+} */
+
+/* visited link */
+/* a:visited {
+  color: #ff2f86;
+} */
+
+/* mouse over link */
+/* a:hover {
+  color: hotpink;
+} */
+
+/* selected link */
+/* a:active {
+  color:#F84791;
+} */ */
