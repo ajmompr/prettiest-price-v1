@@ -1,58 +1,34 @@
 # The Prettiest Price - v1
-## Description
-The Prettiest Price is a price comparison tool that allows savvy shoppers to find the lowest (aka "prettiest") prices on all of their personal care and beauty staples. 
+The Prettiest Price (v1) is a price comparison and aggregator tool that allows users to view the price of their favorite beauty/personal care items at 4 major retailers. Users may also view each product's price history trends at each retailer.
 
-## Ruby & Rails info
-- Ruby version: `3.2.1`
-- Rails version: `7.0.4.3`
+Major Retailers:
+- [Amazon.com](amazon.com)
+- [Target.com](target.com)
+- [Walmart.com](walmart.com)
+- [Ulta.com](ulta.com)
 
-## Gems to install
-#### Run `bundle install`
-- gem 'simple_form'
-- gem 'chartkick'
-- gem 'groupdate'
 
-### Additional gems:
+## Table of Contents
+- [Main Feature](#main-feature)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
 
-- [`appdev_support`](https://github.com/firstdraft/appdev_support)
-- [`annotate`](https://github.com/ctran/annotate_models)
-- [`awesome_print`](https://github.com/awesome-print/awesome_print)
-- [`better_errors`](https://github.com/BetterErrors/better_errors)
-- [`binding_of_caller`](https://github.com/banister/binding_of_caller)
-- [`dotenv-rails`](https://github.com/bkeepers/dotenv)
-- [`draft_generators`](https://github.com/firstdraft/draft_generators/)
-- [`draft_matchers`](https://github.com/jelaniwoods/draft_matchers/)
-- [`devise`](https://github.com/heartcombo/devise)
-- [`faker`](https://github.com/faker-ruby/faker)
-- [`grade_runner`](https://github.com/firstdraft/grade_runner/)
-- [`htmlbeautifier`](https://github.com/threedaymonk/htmlbeautifier/)
-- [`http`](https://github.com/httprb/http)
-- [`pry_rails`](https://github.com/pry/pry-rails)
-- [`rails_db`](https://github.com/igorkasyanchuk/rails_db)
-- [`rails-erd`](https://github.com/voormedia/rails-erd)
-- [`rspec-html-matchers`](https://github.com/kucaahbe/rspec-html-matchers)
-- [`rspec-rails`](https://github.com/rspec/rspec-rails)
-- [`rufo`](https://github.com/ruby-formatter/rufo)
-- [`specs_to_readme`](https://github.com/firstdraft/specs_to_readme)
-- [`table_print`](https://github.com/arches/table_print)
-- [`web_git`](https://github.com/firstdraft/web_git)
-- [`webmock`](https://github.com/bblimke/webmock)
+## Main Feature
+## Price History & Price Aggregator
 
-### Additional software:
-- OS Ubuntu 20.04.5 LTS
-- Chromedriver
-- Fly.io's `flyctl`
-- Google Chrome (headless browser)
-- Graphviz
-- Heroku 
-- Node JS 18
-- NPM 8.19.3
-- Parity
-- Postgresql 12
-- Redis
-- Yarn
+After logging in, users can select a product to review its details page. The details page includes a list of current prices from the 4 major retailers and price history charts that display pricing trends.
+![Price History Screenshot](https://res.cloudinary.com/du9smacg9/image/upload/v1702498715/Readme%20Screenshots/mwymdedcnpzfxc4yapzf.png)
+![Price Aggregator Screenshot](https://res.cloudinary.com/du9smacg9/image/upload/v1702498715/Readme%20Screenshots/j5yjwyptc5gigeeaa7ju.png)
 
-### VS Code extensions:
-- aliariff.vscode-erb-beautify
-- mbessey.vscode-rufo
-- vortizhe.simple-ruby-erb
+## Technologies Used
+- Rails 7
+- Bootstrap 5
+
+## Installation
+To install and run, please use the following commands:
+```sh
+bundle install
+rails db:create
+rails db:migrate
+bin/dev
+```
