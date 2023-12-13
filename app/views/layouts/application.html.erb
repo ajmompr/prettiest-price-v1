@@ -14,25 +14,29 @@
   </head>
 
   <body>
+
+    <!-- Render background image on login-->
     <% if controller_path == 'devise/sessions' && action_name == 'new' %>
       <div class="has-bg-img">
         <div class="bg-img bg-cover " id="background-img">
     <% end %>
-        <!-- Render the correct navbar based on current page -->
-        <% if controller_name == 'static' && action_name == 'index' %>
-          <%= render "shared/sticky_navbar"%>
-        <% else %>
-          <%= render "shared/fixed_navbar"%>
-        <% end %>
 
-        <% if notice.present? %>
-          <%= render partial: "shared/flash", locals: { message: notice, css_class: "success" }%>
-        <% end %>
-        <% if alert.present? %>
-          <%= render partial: "shared/flash", locals: { message: alert, css_class: "danger" }%>
-        <% end %>
+    <!-- Render the correct navbar based on current page -->
+    <% if controller_name == 'static' && action_name == 'index' %>
+      <%= render "shared/sticky_navbar"%>
+    <% else %>
+      <%= render "shared/fixed_navbar"%>
+    <% end %>
 
-        <%= yield %>
+    <!-- Alerts -->
+    <% if notice.present? %>
+      <%= render partial: "shared/flash", locals: { message: notice, css_class: "success" }%>
+    <% end %>
+    <% if alert.present? %>
+      <%= render partial: "shared/flash", locals: { message: alert, css_class: "danger" }%>
+    <% end %>
+
+    <%= yield %>
 
       </div>
     </div>
