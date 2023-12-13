@@ -1,12 +1,10 @@
 <div id="<%= dom_id retailer %>">
   <p>
-    <strong>Name:</strong>
-    <%= retailer.name %>
-  </p>
 
-  <p>
-    <strong>Listing count:</strong>
-    <%= retailer.listing_count %>
+    <img src="<%= retailer.image%>" alt="<%= retailer.name %>'s logo" style="width: 150px; height: 100px">
+    <p><%= retailer.name %></p>
+    <p><strong>URL: </strong></p>
+    <p><%= link_to "Link to External Site", retailer.url %></p>
   </p>
 
 </div>
