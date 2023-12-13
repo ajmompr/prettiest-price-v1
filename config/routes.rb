@@ -10,13 +10,14 @@ Rails.application.routes.draw do
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
-  resources :listings, only: :index
+
   resources :retailers, only: :index
-  resources :snapshots, only: :index do
+  resources :snapshots, only: [] do
     collection do
       get "snaps_by_day"
     end
   end
+
   resources :products, only: [:index, :show]
   resources :waitlist_entries, only: :create
 
