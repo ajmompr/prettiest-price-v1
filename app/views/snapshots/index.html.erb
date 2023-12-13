@@ -1,10 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Snapshots</h1>
-
-<div id="snapshots">
-  <% @snapshots.each do |snapshot| %>
-    <%= render snapshot %>
- 
-  <% end %>
+<div class="container" id="snapshots">
+  <h1>Snapshots</h1>
+  <%= render "snapshot_index_card" %>
 </div>
