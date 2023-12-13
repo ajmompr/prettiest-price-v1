@@ -1,9 +1,19 @@
+
+body.landing-page-background {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/background-2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 body {
   height:100vh;
   background-color: white; 
 }
 
-/* landing page * waitlist CSS */
+/* waitlist & landing CSS */
 #background-img{
   background-image: url('/images/background-2.jpg');
   background-repeat: no-repeat; 
@@ -59,5 +69,3 @@ body {
   max-width: 250px;
   height: 200px;
 }
-
-

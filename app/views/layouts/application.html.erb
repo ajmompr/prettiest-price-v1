@@ -5,22 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <!-- Render bootstrap, JS, and Font Awesome -->
     <%= render partial: "shared/cdn_assets" %>
-
+    <!-- Link app + custom stylesheets-->
     <%= stylesheet_link_tag "application", "custom_styles", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-
-    <!-- Render background image on login-->
-    <% if controller_path == 'devise/sessions' && action_name == 'new' %>
-      <div class="has-bg-img">
-        <div class="bg-img bg-cover " id="background-img">
-    <% end %>
-
+  <body class="<%= 'landing-page-background' if controller_path == 'devise/sessions' && action_name == 'new' %>">
     <!-- Render the correct navbar based on current page -->
     <% if controller_name == 'static' && action_name == 'index' %>
       <%= render "shared/sticky_navbar"%>
@@ -38,7 +30,7 @@
 
     <%= yield %>
 
-      </div>
-    </div>
-  </body>
+  </div>
+</div>
+</body>
 </html>
