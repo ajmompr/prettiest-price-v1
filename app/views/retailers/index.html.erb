@@ -1,10 +1,5 @@
-<p style="color: green"><%= notice %></p>
+<div class="container" id="retailers">
+  <h1>Retailers</h1>
+  <%= render "retailer_index_card" %>
 
-<h1>Retailers</h1>
-
-<div id="retailers">
-  <% @retailers.each do |retailer| %>
-    <%= render retailer %>
-   
-  <% end %>
 </div>
