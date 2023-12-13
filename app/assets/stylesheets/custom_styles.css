@@ -1,14 +1,9 @@
 body {
   height:100vh;
   background-color: white; 
-
-/* TO-DO: Create separate CSS for landing page vs application pages */
-  /* background-color: #d2bfc0;  */
 }
 
-.main {
-}
-
+/* landing page * waitlist CSS */
 #background-img{
   background-image: url('/images/background-2.jpg');
   background-repeat: no-repeat; 
@@ -25,8 +20,7 @@ body {
   color:black;
 
 }
-.landing-page-logo {
-}
+
 #join-waitlist-btn, #sign-in-button {
   background-color: #F84791;
   color: white;
@@ -65,4 +59,5 @@ body {
   max-width: 250px;
   height: 200px;
 }
+
 
