@@ -1,9 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Listings</h1>
 
-<div id="listings">
-  <% @listings.each do |listing| %>
-    <%= render listing %>
-  <% end %>
+<div class="container" id="listings">
+<h1>Listings</h1>
+    <%= render "listings_index_card" %>
+
 </div>

@@ -1,0 +1,16 @@
+<% @listings.each do |listing| %>
+    <div class="card mb-5 " style="max-width: 100%;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="<%= listing.retailer.image %>" class="mt-4 ms-3 img-fluid rounded-start product-logo" style="width: 150px; height: 100px" alt="<%=listing.retailer.name%> logo">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body text-end mt-4 me-3">
+            <h5 class="card-title"><%= listing.id%></h5>
+            <p class="card-text"><%= listing.retailer_id %></p>
+            <a href="<%= listing.url %>"> Listing URL </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
