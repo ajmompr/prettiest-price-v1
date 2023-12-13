@@ -41,7 +41,7 @@ csv.each do |row|
   t = Snapshot.new
   t.price = row["price"]
   t.snapshot_date = row["date"]
-  t.listing_id = row["listing_id"]
+  t.listing_id = 105
   t.save
 end
 
@@ -52,7 +52,7 @@ csv.each do |row|
   t = Snapshot.new
   t.price = row["price"]
   t.snapshot_date = row["date"]
-  t.listing_id = row["listing_id"]
+  t.listing_id = 106
   t.save
 end
 
@@ -63,7 +63,7 @@ csv.each do |row|
   t = Snapshot.new
   t.price = row["price"]
   t.snapshot_date = row["date"]
-  t.listing_id = row["listing_id"]
+  t.listing_id = 107
   t.save
 end
 
@@ -74,6 +74,6 @@ csv.each do |row|
   t = Snapshot.new
   t.price = row["price"]
   t.snapshot_date = row["date"]
-  t.listing_id = row["listing_id"]
+  t.listing_id = 108
   t.save
 end
