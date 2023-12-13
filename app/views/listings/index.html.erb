@@ -5,10 +5,5 @@
 <div id="listings">
   <% @listings.each do |listing| %>
     <%= render listing %>
-    <p>
-      <%= link_to "Show this listing", listing %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New listing", new_listing_path %>
