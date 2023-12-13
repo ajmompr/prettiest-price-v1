@@ -2,12 +2,16 @@
     <div class="card mb-5 " style="max-width: 100%;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="<%= retailer.image %>" class="mt-4 ms-3 img-fluid rounded-start product-logo" style="width: 150px; height: 100px" alt="<%=retailer.name%> logo">
+
+          <%= image_tag retailer.image, class: "mt-4 ms-3 img-fluid rounded-start product-logo", style: "width: 150px; height: 100px", alt: "#{retailer.name} logo" %>
+
         </div>
         <div class="col-md-8">
           <div class="card-body text-end mt-4 me-3">
             <h5 class="card-title"><%= retailer.name %></h5>
-            <a href="<%= retailer.url %>"> Link to <%= retailer.name%> </a>
+
+            <%= link_to "View Retailer", retailer.url %>
+            
           </div>
         </div>
       </div>
