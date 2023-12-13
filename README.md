@@ -32,3 +32,4 @@ rails db:create
 rails db:migrate
 bin/dev
 ```
+## Entity-Relationship Diagram
