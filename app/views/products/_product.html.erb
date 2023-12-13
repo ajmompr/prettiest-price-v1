@@ -3,12 +3,14 @@
     <div class= "container">
       <div class="row">
         <div class="product-image mt- pt-4 col-lg-7 col-12 order-lg-1 order-2">
-          <img src="<%= product.image %>">
+          <%= image_tag(product.image) %>
         </div>
 
         <div class="product-info-pane pt-5 mt-5 ps-lg-4 col-lg-5 col-12 order-lg-2 order-1">
           <div class="product-brand mb-2">
-            <small><a href="#"> <%= @product.brand %></a></small>
+            <small>
+              <%= link_to product.brand, products_path	%>
+            </small>
           </div>
           <div class="product-name mb-3">
             <strong><%= product.name %></strong>

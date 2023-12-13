@@ -1,14 +1,19 @@
+
+body.landing-page-background {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/background-2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 body {
   height:100vh;
   background-color: white; 
-
-/* TO-DO: Create separate CSS for landing page vs application pages */
-  /* background-color: #d2bfc0;  */
 }
 
-.main {
-}
-
+/* waitlist & landing CSS */
 #background-img{
   background-image: url('/images/background-2.jpg');
   background-repeat: no-repeat; 
@@ -25,8 +30,7 @@ body {
   color:black;
 
 }
-.landing-page-logo {
-}
+
 #join-waitlist-btn, #sign-in-button {
   background-color: #F84791;
   color: white;
@@ -65,24 +69,3 @@ body {
   max-width: 250px;
   height: 200px;
 }
-
-/* Style links
-/* unvisited link */
-/* a:link {
-  color: #F84791;
-} */
-
-/* visited link */
-/* a:visited {
-  color: #ff2f86;
-} */
-
-/* mouse over link */
-/* a:hover {
-  color: hotpink;
-} */
-
-/* selected link */
-/* a:active {
-  color:#F84791;
-} */ 
