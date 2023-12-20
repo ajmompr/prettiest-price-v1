@@ -7,3 +7,4 @@ class ErrorsController < ApplicationController
     render status: 500
   end 
 end
+# are these custom error messages?

@@ -4,3 +4,5 @@ class StaticController < ApplicationController
   def index
   end
 end
+# What do you mean by static?
+# Do you still need this?
