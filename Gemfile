@@ -124,3 +124,6 @@ gem 'simple_form'
 gem 'chartkick'
 
 gem 'groupdate'
+
+# Add pundit
+gem 'pundit'
