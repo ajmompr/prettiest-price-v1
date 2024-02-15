@@ -126,3 +126,5 @@ gem 'chartkick'
 gem 'groupdate'
 
 gem 'blazer'
+
+gem 'ahoy_matey'
