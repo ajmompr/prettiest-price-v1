@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites
   authenticate :user, ->(user) { user.admin? } do
     mount Blazer::Engine, at: "blazer"
     mount RailsAdmin::Engine, at: "admin", as: "rails_admin"
@@ -13,14 +14,15 @@ Rails.application.routes.draw do
 
 
   resources :retailers, only: :index
+  resources :products, only: [:index, :show]
+  resources :waitlist_entries, only: :create
+  
   resources :snapshots, only: [] do
     collection do
       get "snaps_by_day"
     end
   end
 
-  resources :products, only: [:index, :show]
-  resources :waitlist_entries, only: :create
 
   if Rails.env.development?
     mount RailsDb::Engine => "/rails/db", :as => "rails_db_admin"
