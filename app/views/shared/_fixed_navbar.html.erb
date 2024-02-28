@@ -35,10 +35,14 @@
             <li>
               <%= link_to "Edit Profile", edit_user_registration_path	, class: "nav-item nav-link mx-3" %>
             </li>
+            <li> 
+             <a href="#" class="nav-item nav-link mx-3">Dashboard</a>
+            </li>
             <li><hr class="dropdown-divider"></li>
             <li>
               <%= link_to "Sign-out", destroy_user_session_path, data: { turbo_method: :delete}, class: "nav-item nav-link mx-3"%>
             </li>
+
           <% else %>
             <li>
               <%= link_to "Sign-in", new_user_session_path, class: "nav-item nav-link mx-3"%>
