@@ -17,4 +17,6 @@ class Product < ApplicationRecord
 
   has_many :retailers, through: :listings, source: :retailer
 
+  has_many :favorites
+
 end
