@@ -23,10 +23,13 @@ class AmzDomScraper
  
     doc = Nokogiri::HTML(html)
 
-    # price_data = doc.css("tr td")
+    # Get Product Price & Date Snapshot information
     third_column_data = doc.css('table tr:first-child td:nth-child(4)').text
-    puts third_column_data
-    # debugger
+    third_column_array = third_column_data.split("\n")
+    price_string = third_column_array[1]
+    price_float = price_string.gsub("$","").to_f
+    puts "Product: #{listing_id}; Price: $#{price_float}; Date:"
+ 
     # price_data.each do |price|
     #   puts price.text
     # end
