@@ -35,7 +35,6 @@ class AmzDomScraper
     snapshot_date_string = third_column_array[2]
     snapshot_date_stripped = snapshot_date_string.gsub("(","").gsub(")","")
     snapshot_date = Date.parse(snapshot_date_stripped)
-    debugger
 
     puts "Product: #{listing_id}; Daily Snapshot Price: $#{snapshot_price_float}; Daily Snaphsot Date: #{snapshot_date}"
 
