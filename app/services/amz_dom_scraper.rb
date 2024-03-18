@@ -23,16 +23,21 @@ class AmzDomScraper
  
     doc = Nokogiri::HTML(html)
 
-    # Get Product Price & Date Snapshot information
+    # Parse Product Price & Date Snapshot information from CamelCamelCamel
     third_column_data = doc.css('table tr:first-child td:nth-child(4)').text
     third_column_array = third_column_data.split("\n")
-    price_string = third_column_array[1]
-    price_float = price_string.gsub("$","").to_f
-    puts "Product: #{listing_id}; Price: $#{price_float}; Date:"
- 
-    # price_data.each do |price|
-    #   puts price.text
-    # end
+
+    # Fetch Prodcut Snapshot Price
+    snapshot_price_string = third_column_array[1]
+    snapshot_price_float = snapshot_price_string.gsub("$","").to_f
+
+    # Fetch Product Snapshot Date
+    snapshot_date_string = third_column_array[2]
+    snapshot_date_stripped = snapshot_date_string.gsub("(","").gsub(")","")
+    snapshot_date = Date.parse(snapshot_date_stripped)
+    debugger
+
+    puts "Product: #{listing_id}; Daily Snapshot Price: $#{snapshot_price_float}; Daily Snaphsot Date: #{snapshot_date}"
 
   rescue StandardError => e
     puts "Error: #{e}"
