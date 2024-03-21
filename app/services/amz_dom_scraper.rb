@@ -20,7 +20,7 @@ class AmzDomScraper
       puts "nothing found at this url: #{url}"
       return
     end
- 
+
     doc = Nokogiri::HTML(html)
 
     # Parse Product Price & Date Snapshot information from CamelCamelCamel
@@ -38,6 +38,13 @@ class AmzDomScraper
 
     puts "Product: #{listing_id}; Daily Snapshot Price: $#{snapshot_price_float}; Daily Snaphsot Date: #{snapshot_date}"
 
+    # TODO: return a hash object
+    # {
+    #   listing_id: "",
+    #   price: "",
+    #   date: ""
+    # }
+
   rescue StandardError => e
     puts "Error: #{e}"
   end
@@ -50,13 +57,13 @@ class AmzDomScraper
 
   def fetch_html(url)
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
-    
+
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless=new')
     options.add_argument("--user-agent=#{user_agent}")
-    
+
     # driver = Selenium::WebDriver.for(:chrome)
-    
+
     driver = Selenium::WebDriver.for(:chrome, capabilities: [options])
 
     driver.navigate.to url
@@ -69,5 +76,5 @@ class AmzDomScraper
   rescue Selenium::WebDriver::Error::TimeoutError
     nil
   end
-  
+
 end
